@@ -1,0 +1,14 @@
+<template name="scriptItem">
+  <tbody>
+    <tr>
+      <td>{{title}}</td>
+      <td>{{genre}}</td>
+      <td>{{author}}</td>
+      <td>{{content}}</td>
+      <td>
+        <a href="{{ pathFor 'scriptPage' }}" class="btn btn-default">Discuss</a>
+        {{ #if ownPost }}<a href="{{ pathFor 'scriptEdit' }}" class="btn btn-default">Edit</a>{{ /if }}
+      </td>
+    </tr>
+  </tbody>
+</template>

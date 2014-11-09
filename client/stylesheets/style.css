@@ -1,0 +1,19 @@
+div.header-profile-thumbnail-mask {
+  height: 36px;
+  width: 36px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 7px;
+  position: relative;
+}
+
+img.header-profile-thumbnail {
+  height: 36px;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+
+}

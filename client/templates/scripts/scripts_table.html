@@ -1,0 +1,16 @@
+<template name="scriptsTable">
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Genre</th>
+          <th>Submitted by</th>
+          <th>Content</th>
+          <th>Join Room</th>
+        </tr>
+      </thead>
+      {{#each scripts}}     <!-- loop over scripts object, which comes from the template helper -->
+        {{> scriptItem}}    <!-- and display using the scriptItem template -->
+      {{/each}}
+    </table>
+</template>

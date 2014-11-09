@@ -1,0 +1,40 @@
+<template name="header">
+  <header>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="{{pathFor 'scriptsList'}}" class="navbar-brand">Novel Scramble</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="nav navbar-nav">
+            {{ #if currentUser }}
+              <li><a href="{{ pathFor 'scriptSubmit' }}">Submit Script</a></li>
+            {{ /if }}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {{> loginButtons}}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <div class="header-profile-thumbnail-mask">
+            {{ #if currentUser.services.google }}
+              <img class="header-profile-thumbnail" src="{{ currentUser.services.google.picture }}" alt="Profile">
+            {{ /if }}
+            {{ #if currentUser.services.facebook }}
+              <img class="header-profile-thumbnail" src="http://graph.facebook.com/{{ currentUser.services.facebook.id }}/picture?type=square" alt="Profile">
+            {{ /if }}
+            {{ #if currentUser.services.twitter }}
+              <img class="header-profile-thumbnail" src="{{ currentUser.services.twitter.profile_image_url }}" alt="Profile">
+            {{ /if }}
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</template>
